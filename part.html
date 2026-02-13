@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>practies</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="part.css">
+</head>
+<style>
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.chinu{
+    width: 100%;
+    height: 850px;
+    background-color: lightblue;
+    border: 2px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.chinnuPage{
+    width: 100%;
+    height: 850px;
+    background-color: lightblue;
+    border: 2px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.sitaaPage{
+    width: 100%;
+    height: 850px;
+    background-color: lightgreen;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+}
+#qstdiv1{
+    text-align: center;
+}
+#qstPara{
+    margin-bottom: 20px;
+}
+#qstDiv{
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#qstDiv p{
+    margin-bottom: 20px;
+}
+#chinnuBtn{
+    padding: 10px 20px;
+    border-radius: 15px;
+    box-shadow: 3px 3px 20px gray;
+    font-size: 16px;
+    cursor: pointer;
+}
+#sitaaBtn{
+    transition: 0s;
+    padding: 10px 20px;
+    border-radius: 15px;
+    box-shadow: 3px 3px 20px gray;
+    font-size: 16px;
+    cursor: pointer;
+
+}
+#chinnuBtn:hover{
+    background-color: pink;
+    color: black;
+    cursor: pointer;
+    
+}
+
+#nextBtn1{
+    margin-top: 20px;
+    padding: 10px 20px;
+    border-radius: 15px;
+    box-shadow: 3px 3px 20px gray;
+    font-size: 16px;
+    cursor: pointer;
+}
+#nextBtn1:hover{
+    background-color: pink;
+    color: black;
+    cursor: pointer;
+}
+
+#secondPageBtn{
+    margin-top: 20px;
+    padding: 10px 20px;
+    border-radius: 15px;
+    box-shadow: 3px 3px 20px gray;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+#secondPageBtn:hover{
+    background-color: pink;
+    color: black;
+    transform: scale(1.05);
+}
+
+#sitaaBtn:hover{
+    background-color: white;
+    color: black;
+    cursor: pointer;
+}
+
+#yesBtn, #noBtn{
+    height: 50px;
+    width: 50px;
+    border-radius: 15%;
+    margin-left: 50px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#noBtn{
+    cursor: not-allowed;
+}
+#yesBtn:hover, #noBtn:hover{
+    background-color: pink;
+    color: black;
+    
+}
+#yesChinnuBtn, #sitaaBtn{
+    height: 50px;
+    width: 100px;
+    border-radius: 15%;
+    margin-left: 50px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+#sitaaBtn{
+    position: absolute;
+}
+#yesChinnuBtn{
+    height: 50px;
+    width: 100px;
+    border-radius: 15%;
+    margin-left: 50px;
+    font-size: 16px;
+    cursor: pointer;
+}
+#yesChinnuBtn:hover, #sitaaBtn:hover{
+    background-color: pink;
+    color: black;
+    cursor: pointer;
+}
+.birthPage{
+    width: 100%;
+    height: 850px;
+    background-color: pink;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 24px;
+    font-weight: bold;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-bottom: 20px;
+}
+.birthPage p{
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.imagesDiv{
+    height: 400px;
+    width: 300px;
+
+    overflow: hidden;
+    border-radius: 20%;
+    border: 5px solid white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.images{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+#imgCngBtn{
+    margin-top: 20px;
+    padding: 10px 20px;
+    border-radius: 15px;
+    box-shadow: 3px 3px 20px gray;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+#imgCngBtn:hover {
+    animation: bounce 0.7s ease;
+}
+
+@keyframes bounce {
+    0% { transform: translateY(5px); }
+    30% { transform: translateY(-15px); }
+    60% { transform: translateY(5px); }
+    100% { transform: translateY(5px); }
+}
+
+.birthdayDiv{
+    height: 100px;
+    width: 500px;
+    display: flex;
+    overflow: hidden;
+    white-space: nowrap;
+    box-sizing: border-box;
+}
+.birthdayDiv span {
+    display: inline-block;
+    padding-left: 100%;
+    animation: birthdayMarquee 5s linear infinite;
+}
+
+@keyframes birthdayMarquee {
+    0%   { transform: translate(0, 0); }
+    100% { transform: translate(-100%, 0); }
+}
+#birthdayMessage {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.falling-item {
+  position: fixed;
+  top: -50px;
+  font-size: 25px;
+  animation: fall 3s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes fall {
+  0% { transform: translateY(0) rotate(0deg); opacity: 50; }
+  100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+}
+
+.nextBtn2{
+    margin-top: 20px;
+    padding: 10px 20px;
+    border-radius: 15px;
+    box-shadow: 3px 3px 20px gray;
+    font-size: 16px;
+    cursor: pointer;
+}
+.nextBtn2:hover{
+    background-color: pink;
+    color: black;
+    cursor: pointer;
+}
+.gamePage{
+    width: 100%;
+    height: 850px;
+    background-color: lightyellow;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 24px;
+    font-weight: bold;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-bottom: 20px;
+}
+.gamePage p{
+    font-size: 24px;
+    font-weight: bold;
+}
+.gamePage button{
+    margin-top: 20px;
+    padding: 10px 20px;
+    border-radius: 15px;
+    box-shadow: 3px 3px 20px gray;
+    font-size: 16px;
+    cursor: pointer;
+}
+.gamePage button:hover{
+    background-color: pink;
+    color: black;
+    cursor: pointer;
+}
+</style>
+
+<body>
+  <div class="birthPage">
+    <div class="imagesDiv">
+        <img class="images" id="img1" src="img1.jpeg">
+        <img class="images" id="img2" src="img2.jpeg">
+        <img class="images" id="img3" src="img3.jpeg">
+        <img class="images" id="img4" src="img4.jpeg">
+        <img class="images" id="img5" src="img5.jpeg">
+    </div>
+    <div class="birthdayDiv">
+    <span id="birthdayMessage">HAPPY VALENTINE'S DAY Sitaa🩷🤍 </span>
+    
+    </div>
+    <button id="imgCngBtn">🪽</button>
+    <button id="nextBtn1">Can we go next🥳</button>
+  </div>
+
+<div class="chinnuPage" style="display: none;">
+    <h1>Well come my first valentine sitaa🤍</h1>
+    <br>
+    <button id="secondPageBtn">shell we go next sitaa</button>
+
+</div>
+
+<!-- <div class="sitaaPage" style="display: none;">
+    <div id="qstdiv1">
+        <h1 id="qstPara">Sitaa I have a question</h1>
+        <button id="yesBtn">Yes</button>
+        <button id="noBtn">No</button>
+    </div> -->
+    <br>
+    <!-- <div id="qstDiv" style="display: none;">
+        <p>Do you love me💖🫣</p>
+        <button id="yesChinnuBtn">Yes chinnu</button>
+        <button id="sitaaBtn">No chinnu</button>
+        <button class="nextBtn2" style="display: none;">Can we go next</button>
+    </div>
+</div>
+<div>
+</div> -->
+<!-- <div class="gamePage" style="display: none;">
+    <p>can we play a game?</p>
+    <button id="gameBtn1">Start Game!✨</button>
+    <button class="gameBtn" onclick="showPopup()">Click Me</button>
+
+</div> -->
+
+<!-- <div class="gameDiv">
+    <h1>Let's play a game!</h1>
+</div> -->
+
+<script>
+    //birthday page
+const birthPage = document.querySelector(".birthPage");
+
+//image animation
+const imagesDiv = document.querySelector(".imagesDiv");
+const imageElements = document.querySelectorAll(".images");
+let index = 0;
+
+// Hide all images initially, then show first one
+imageElements.forEach(img => img.style.display = "none");
+imageElements[index].style.display = "block";
+
+document.getElementById("imgCngBtn").addEventListener("click", () => {
+    // Hide current image
+    imageElements[index].style.display = "none";
+
+    // Move to next
+    index++;
+    if (index >= imageElements.length) {
+        index = 0;
+    }
+
+    // Show next image
+    imageElements[index].style.display = "block";
+    
+    // Trigger surprise animation
+    surpriseAnimation();
+});
+
+function surpriseAnimation() {
+  const items = ["💖","🤍","🩷","✨","🎉","⭐","❤️","🎊","💫","🎂"]; // You can add more
+
+  let count = 0;
+  const maxItems = 30; // Limit number of falling items per click
+  
+  const interval = setInterval(() => {
+    if (count >= maxItems) {
+      clearInterval(interval);
+      return;
+    }
+    
+    const item = document.createElement("div");
+    item.className = "falling-item";
+
+    // Random emoji from list
+    item.textContent = items[Math.floor(Math.random() * items.length)];
+
+    // Random horizontal position
+    item.style.left = Math.random() * window.innerWidth + "px";
+
+    document.body.appendChild(item);
+
+    // Remove after animation ends
+    setTimeout(() => item.remove(), 3000);
+    
+    count++;
+  }, 300);
+}
+
+const chinnuDiv = document.querySelector(".chinnuPage");
+const sitaaDiv = document.querySelector(".sitaaPage");
+const qstdiv1 = document.getElementById("qstdiv1");
+const qstDiv = document.getElementById("qstDiv");
+const gameDiv = document.querySelector(".gamePage");
+
+document.getElementById("nextBtn1").addEventListener("click", () => {
+    birthPage.style.display = "none";
+    chinnuDiv.style.display = "flex";
+});
+
+document.getElementById("secondPageBtn").addEventListener("click", () => {
+    window.location.href = "val.html";
+});
+
+document.getElementById("chinnuBtn").addEventListener("click", () => {
+    chinnuDiv.style.display = "none";
+    qstDiv.style.display = "block";
+});
+
+document.querySelector(".gameDiv").addEventListener("click", () => {
+    alert("Let's play a game! 🎮");
+});
+
+
+
+// Yes button shows the love question
+document.getElementById("yesBtn").addEventListener("click", () => {
+    qstdiv1.style.display = "none";
+    qstDiv.style.display = "block";
+});
+
+// No button does nothing (disabled)
+document.getElementById("noBtn").addEventListener("click", (e) => {
+    e.preventDefault();
+});
+
+document.getElementById("yesChinnuBtn").addEventListener("click", () => {
+    alert("Yay! I knew it! Love you Sitaa 💖");
+
+    document.querySelector(".nextBtn2").style.display = "block";
+    // Reset for next time
+    // sitaaDiv.style.display = "none";
+    // chinuDiv.style.display = "flex";
+    // qstdiv1.style.display = "block";
+    // qstDiv.style.display = "none";
+});
+
+document.getElementById("sitaaBtn").addEventListener("click", () => {
+    sitaaDiv.style.display = "none";
+    chinuDiv.style.display = "flex";
+    // Reset for next time
+    qstdiv1.style.display = "block";
+    qstDiv.style.display = "none";
+});
+
+const btn = document.querySelector("#sitaaBtn");
+btn.addEventListener("mouseover", () => {
+    const x = Math.random() * (window.innerWidth - 150);
+    const y = Math.random() * (window.innerHeight - 100);
+    btn.style.left = x + "px";
+    btn.style.top = y + "px";
+    btn.style.position = "absolute";
+});
+
+const gamePage = document.querySelector(".gamePage");
+const nextBtn2 = document.querySelector(".nextBtn2");
+nextBtn2.addEventListener("click", () => {
+    qstDiv.style.display = "none";
+    gamePage.style.display = "flex";
+}); 
+ 
+
+</script>    
+</body>
+</html>
